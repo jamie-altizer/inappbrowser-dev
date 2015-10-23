@@ -159,9 +159,6 @@ public class InAppBrowser extends CordovaPlugin {
                             }
                         }
                         // load in webview
-                        if (url.startsWith("file://") || url.startsWith("javascript:") 
-                                || Config.isUrlWhiteListed(url)) {
-                            Log.d(LOG_TAG, "loading in webview");
                         if (Boolean.TRUE.equals(shouldAllowNavigation)) {
                             Log.d(LOG_TAG, "loading in webview");
                             webView.loadUrl(url);
@@ -196,8 +193,7 @@ public class InAppBrowser extends CordovaPlugin {
                     PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, result);
                     pluginResult.setKeepCallback(true);
                     callbackContext.sendPluginResult(pluginResult);
-                }
-            });
+                }});
         }
         else if (action.equals("close")) {
             closeDialog();
@@ -564,14 +560,14 @@ public class InAppBrowser extends CordovaPlugin {
                 back.setTextColor(ExternalResourceHelper.getColor(ctx, "gray"));
                 back.setText(ExternalResourceHelper.getStrings(ctx, "fa_chevron_left"));
                 back.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24);
-				if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN)
-                {
-                    back.setBackgroundDrawable(backIcon);
-                }
-                else
-                {
-                    back.setBackground(backIcon);
-                }
+//				if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN)
+//                {
+//                    back.setBackgroundDrawable(backIcon);
+//                }
+//                else
+//                {
+//                    back.setBackground(backIcon);
+//                }
                 back.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         goBack();
@@ -589,14 +585,14 @@ public class InAppBrowser extends CordovaPlugin {
                 forward.setTextColor(ExternalResourceHelper.getColor(ctx, "gray"));
                 forward.setText(ExternalResourceHelper.getStrings(ctx, "fa_chevron_right"));
                 forward.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24);
-				if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN)
-                {
-                    forward.setBackgroundDrawable(fwdIcon);
-                }
-                else
-                {
-                    forward.setBackground(fwdIcon);
-                }
+//				if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN)
+//                {
+//                    forward.setBackgroundDrawable(fwdIcon);
+//                }
+//                else
+//                {
+//                    forward.setBackground(fwdIcon);
+//                }
                 forward.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         goForward();
@@ -673,14 +669,14 @@ public class InAppBrowser extends CordovaPlugin {
                 close.setText(ExternalResourceHelper.getStrings(ctx, "fa_times"));
                 close.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24);
                 close.setTextColor(ExternalResourceHelper.getColor(ctx, "white"));
-				if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN)
-                {
-                    close.setBackgroundDrawable(closeIcon);
-                }
-                else
-                {
-                    close.setBackground(closeIcon);
-                }
+//				if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN)
+//                {
+//                    close.setBackgroundDrawable(closeIcon);
+//                }
+//                else
+//                {
+//                    close.setBackground(closeIcon);
+//                }
                 close.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         closeDialog();
